@@ -1,0 +1,22 @@
+Assignment 2
+
+1) Which field of the Customers table is the primary key?
+=>In SQL, a primary key is a unique identifier for each record in a database table. It ensures that each row in the table is distinct from every other row. Here are the key features of a primary key:
+
+Uniqueness: Each value in the primary key column(s) must be unique across the table. No two rows can have the same primary key value.
+
+Non-nullability: A primary key column cannot contain NULL values. Every row must have a valid value for the primary key.
+
+Single-column or Multi-column: A primary key can consist of a single column or multiple columns. If multiple columns are used, they are collectively called a composite key.
+
+So in customers table primary key is:snum int(4).
+
+2) What is the 4th column of the Customers table?
+=>Rating int(4)
+
+3) What is another word for row? For column?
+=>Another word for a row is a record or tuple.
+  Another word for a column is a field or attribute. 
+
+4) Why isn’t it possible to see the first five rows of a table?
+=>SQL is fast language.Query is manage of db server.While inserting the data in db ,servers add them wherever it gets space.Also is same db is shared to devlopers if the server was inserting data sequentially and there was concurrent insert command this will give rise to ambiguity.Therefore it is not possiblr to retirve this scattered data.But by explicitly we can perform is by giving limit. 

@@ -1,0 +1,5 @@
+mysql> create table SALESPEOPLE(Snum INT(4),Sname varchar(10),City varchar(10),Comm float(3,2));
+
+mysql> create table CUSTOMERS(Cnum INT(4),Cname varchar(10),City varchar(10),Rating int(4),Snum int(4));
+
+mysql> create table ORDERS(Onum int(4), Amt float(7,2),Odate date,Cnum int(4),Snum int(4));

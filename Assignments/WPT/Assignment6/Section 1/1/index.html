@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <div>
+        <h2>Items</h2>
+        <ul id="item-list">
+            <li data-price="100.00">Item 1 - ₹100.00 <button class="add-item">Add to Cart</button></li>
+            <li data-price="150.00">Item 2 - ₹150.00 <button class="add-item">Add to Cart</button></li>
+            <li data-price="200.00">Item 3 - ₹200.00 <button class="add-item">Add to Cart</button></li>
+        </ul>
+    </div>
+
+    <h2>Your Cart</h2>
+    <ul id="cart-list"></ul>
+    <p>Total Price (including tax): ₹<span id="total-price">0.00</span></p>
+
+    <script>
+        // Constant tax rate
+        const TAX_RATE = 0.08; // 8% GST
+
+        // Cart to hold the items
+        let cart = [];
+        
+        // Function to add an item to the cart
+        function addItemToCart(item) {
+            cart.push(item);
+            updateCart();
+        }
+
+        // Function to update the cart display and total price
+        function updateCart() {
+            const cartList = document.getElementById('cart-list');
+            const totalPriceElement = document.getElementById('total-price');
+            let totalPrice = 0;
+
+            // Clear current cart display
+            cartList.innerHTML = '';
+
+            // Update cart display
+            cart.forEach((item) => {
+                const li = document.createElement('li');
+                li.textContent = item.name + ' - ₹' + item.price.toFixed(2);
+                cartList.appendChild(li);
+                totalPrice += item.price;
+            });
+
+            // Calculate total with tax
+            totalPrice = totalPrice + (totalPrice * TAX_RATE);
+            totalPriceElement.textContent = totalPrice.toFixed(2);
+        }
+
+        // Event listener for add item buttons
+        const addItemButtons = document.querySelectorAll('.add-item');
+        addItemButtons.forEach((button) => {
+            button.addEventListener('click', function () {
+                const itemElement = button.parentElement;
+                const itemName = itemElement.textContent.split(' - ')[0];
+                const itemPrice = parseFloat(itemElement.getAttribute('data-price'));
+                
+                addItemToCart({ name: itemName, price: itemPrice });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateArea(length, width) {
+            return length * width;
+        }
+        
+        // Example usage
+        const length = 5;
+        const width = 10;
+        const area = calculateArea(length, width);
+        console.log("Area of the rectangle:", area); // Output: Area of the rectangle: 50
+
+        const calculateAreaArrow = (length, width) => length * width;
+        const areaArrow = calculateAreaArrow(length, width);
+        console.log("Area of the rectangle :", areaArrow); // Output: Area of the rectangle (arrow function): 50
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function that accepts a callback and a delay (in milliseconds)
+function execute(callback, delay) {
+    setTimeout(callback, delay);
+}
+
+// Example callback function
+function sayHello() {
+    console.log("Hello, world!");
+}
+
+// Usage: Execute the callback after 2 seconds (2000 milliseconds)
+execute(sayHello, 2000); // Output: "Hello, world!" (after a 2-second delay)
+
+    </script>
+</body>
+</html>

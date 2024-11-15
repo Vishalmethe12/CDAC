@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function that returns a promise
+function delayedMessage() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("This message is displayed after 3 seconds.");
+        }, 3000); // 3000 milliseconds = 3 seconds
+    });
+}
+
+// Usage
+delayedMessage().then((message) => console.log(message));
+// Output after 3 seconds: "This message is displayed after 3 seconds."
+
+    </script>
+</body>
+</html>

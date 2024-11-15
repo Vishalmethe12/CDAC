@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<head>
+  
+  <title>Highlight Words</title>
+  <style>
+    .highlight {
+      color: red;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    <a href="#" onmouseover="highlightBoldWords()" onmouseout="removeHighlight()">On mouse over here bold words of the following paragraph will be highlighted</a>
+  </p>
+
+  <p id="text-paragraph">
+    We have just started this section for the users (<strong>beginner</strong> to <strong>intermediate</strong>) who want to work with various <strong>JavaScript</strong> problems and write scripts online to test their JavaScript skill.
+  </p>
+
+  <script>
+    function highlightBoldWords() {
+      const boldWords = document.querySelectorAll("#text-paragraph strong");
+
+      boldWords.forEach(word => {
+        word.classList.add("highlight");
+      });
+    }
+
+    function removeHighlight() {
+      const boldWords = document.querySelectorAll("#text-paragraph strong");
+
+      boldWords.forEach(word => {
+        word.classList.remove("highlight");
+      });
+    }
+  </script>
+</body>
+</html>

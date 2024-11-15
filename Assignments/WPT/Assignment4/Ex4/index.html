@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exercise4</title>
+</head>
+<body>
+<script>
+
+
+function fetchData(url, callback) {
+    console.log(`Fetching data from ${url}...`);
+  
+    setTimeout(() => {
+      const errorOccurred = Math.random() > 0.5;
+  
+      if (errorOccurred) {
+        callback("Error: Unable to fetch data.");
+      } else {
+        const response = `Response from ${url}`;
+        callback(null, response); 
+      }
+    }, 2000); 
+  }
+  
+  fetchData("https://api.example.com/data", function(error, response) {
+    if (error) {
+      console.log(error); 
+    } else {
+      console.log(response); 
+    }
+  });
+  
+  
+  
+</script>
+</body>
+</html>

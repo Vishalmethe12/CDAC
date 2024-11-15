@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exercise1</title>
+</head>
+<body>
+<script>
+
+    function toUpperCase(str) {
+    return str.toUpperCase();
+  }
+  
+  function processData(String, callback) {
+    const result = callback(String); 
+    console.log(result); 
+  }
+  
+  
+  processData("hello world", toUpperCase);
+  
+</script>
+</body>
+</html>
